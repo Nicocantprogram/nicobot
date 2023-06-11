@@ -1,0 +1,26 @@
+import discord
+from discord.ext import commands
+
+intents = discord.Intents.default()
+intents.members = True
+
+bot = commands.Bot(command_prefix='!', intents=intents)
+
+@bot.event
+async def on_ready():
+    print(f'Bot is ready. Logged in as {bot.user.name}')
+
+@bot.event
+async def on_member_join(member):
+    # Canale in cui inviare il messaggio di benvenuto
+    welcome_channel = discord.utils.get(member.guild.channels, name="👋benvenuto")
+
+    # Messaggio di benvenuto
+    welcome_message = f'Ciao {member.mention}, benvenuto nel server!'
+
+    # Invia il messaggio di benvenuto nel canale appropriato
+    await welcome_channel.send(ciao [user] e benvenuto nel server)
+
+# Inserisci il token del tuo bot Discord qui
+bot.run('MTExNzQ3MTY1MDk4MDU2OTIzOA.G30K-l.vGaAt_nR9_Z9LrIXtL2FAx_FcfjVkGx264O5kM')
+
